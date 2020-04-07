@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Password Generator </title>
+	<!-- bbotstrap link -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</head>
+<body>
+ 
+	{% block body_block  %}	
+	<div class="container pt-5">
+     <h1 class="text-center">Password Generator </h1>
+     <hr class="bg-danger">
+
+
+<form action="{% url 'password'  %}" class="border p-2 pt-5 pb-5">
+	
+	<select name="length">
+		<option value="6">6</option>
+		<option value="7">7</option>
+		<option value="8">8</option>
+		<option value="9">9</option>
+		<option value="10">10</option>
+		<option value="11">11</option>
+		<option value="12">12</option>
+		<option value="13">13</option>
+		<option value="14">14</option>
+		
+	</select>
+	<br>
+	<br>
+	<input type="checkbox" name="uppercase"> <span class="font-weight-bold text-monospace">Uppercase </span>  
+	<br>
+	<br>
+	
+	<input type="checkbox" name="Specialcase"> <span class="font-weight-bold text-monospace">SpecialCase</span>  
+	<br>
+	<br>
+	<input type="checkbox" name="number"> <span class="font-weight-bold text-monospace">Numbers</span> 
+	<br>
+	<br>
+<input type="submit" class="btn btn-danger " value="Generate Password">
+
+</form> 
+
+
+<a href="{% url 'aboutme' %}" class="btn btn-primary mt-5">About Me</a>
+</div>
+
+
+{% endblock %}
+</body>
+</html>
+
+
